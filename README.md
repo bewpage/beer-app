@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# Beer Showcase App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This application showcases various beers sourced from the PunkAPI. It provides a user-friendly grid display of beers
+with useful features like pagination and content filtering.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **Grid Display**: Beers are displayed in a grid format for easy visual parsing.
+2. **Server-Side Pagination**: Pagination ensures faster load times by only requesting and displaying a subset of the
+   total beer collection.
+3. **ABV Filtering**: Users can filter beers based on Alcohol By Volume (ABV). A toggle switch lets users easily filter
+   out beers with an ABV less than 8%.
+4. **Error Handling**: Incorporated error handling provides feedback in cases where beer data can't be fetched.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technical Highlights
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **React & TypeScript**: The application is built using React and TypeScript, ensuring type-safe coding.
+2. **Telerik Kendo UI**: Used for its rich set of user interface components, making the app visually appealing and
+   user-friendly.
+3. **Zustand**: A lightweight state management solution, used for maintaining and updating the application state
+   seamlessly.
+4. **API Isolation**: HTTP calls are kept isolated from React components for better code structure and maintainability.
+5. **Unit Testing**: The application incorporates unit tests using tools like Jest and Testing Library to ensure its
+   robustness.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+#### Kendo UI Licensing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you're using the Telerik Kendo UI components, please note that a license file is required for legitimate usage.
+Follow the steps below to ensure proper licensing:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Add License File**: Place the `kendo-ui-license.txt` file in the root directory of your project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **License Activation**:
+   Visit [Kendo UI License Activation Guide](https://www.telerik.com/kendo-react-ui/components/my-license/) and follow
+   the provided instructions to properly activate and validate your Kendo UI license.
 
-### `npm run eject`
+3. **Important**: Failing to include a legitimate license can result in limitations on the functionalities of the Kendo
+   UI components. Ensure your license is valid and always up to date.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository.
+   ```sh
+   git clone https://github.com/bewpage/beer-app.git
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Navigate to the project directory.
+   ```sh
+   cd project_name
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Install NPM packages.
+   ```sh
+   npm install
+   ```
 
-## Learn More
+4. Start the development server.
+   ```sh
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Open your browser and go to `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running Tests
+
+Run the following command in the project directory:
+
+```sh
+npm test
+```
+
+This will run all unit tests and display results in the terminal.
+

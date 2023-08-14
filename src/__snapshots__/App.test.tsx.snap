@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        aria-colcount="3"
+        aria-rowcount="2"
+        class="k-grid k-grid-md"
+        data-keyboardnavscope="true"
+        role="grid"
+      >
+        <div
+          class="k-toolbar k-grid-toolbar k-toolbar-md"
+        >
+          <button>
+            Show High ABV Beers
+          </button>
+        </div>
+        <div
+          class="k-grid-header"
+          role="presentation"
+        >
+          <div
+            class="k-grid-header-wrap"
+            role="presentation"
+            style="border-width: 0px;"
+          >
+            <table
+              class="k-table k-grid-header-table k-table-md"
+              role="presentation"
+            >
+              <colgroup>
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead
+                class="k-table-thead"
+                data-keyboardnavheader="true"
+                role="rowgroup"
+              >
+                <tr
+                  aria-rowindex="1"
+                  class="k-table-row"
+                  role="row"
+                >
+                  <th
+                    aria-colindex="1"
+                    aria-selected="false"
+                    aria-sort="none"
+                    class="k-table-th k-header"
+                    colspan="1"
+                    role="columnheader"
+                    rowspan="1"
+                  >
+                    <span
+                      class="k-cell-inner"
+                    >
+                      <span
+                        class="k-link !k-cursor-default"
+                      >
+                        <span
+                          class="k-column-title"
+                        >
+                          Name
+                        </span>
+                      </span>
+                    </span>
+                  </th>
+                  <th
+                    aria-colindex="2"
+                    aria-selected="false"
+                    aria-sort="none"
+                    class="k-table-th k-header"
+                    colspan="1"
+                    role="columnheader"
+                    rowspan="1"
+                  >
+                    <span
+                      class="k-cell-inner"
+                    >
+                      <span
+                        class="k-link !k-cursor-default"
+                      >
+                        <span
+                          class="k-column-title"
+                        >
+                          ABV
+                        </span>
+                      </span>
+                    </span>
+                  </th>
+                  <th
+                    aria-colindex="3"
+                    aria-selected="false"
+                    aria-sort="none"
+                    class="k-table-th k-header"
+                    colspan="1"
+                    role="columnheader"
+                    rowspan="1"
+                  >
+                    <span
+                      class="k-cell-inner"
+                    >
+                      <span
+                        class="k-link !k-cursor-default"
+                      >
+                        <span
+                          class="k-column-title"
+                        >
+                          Tagline
+                        </span>
+                      </span>
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div
+          class="k-grid-container"
+          role="presentation"
+        >
+          <div
+            class="k-grid-content k-virtual-content"
+            role="presentation"
+          >
+            <div
+              class="k-grid-table-wrap"
+              role="presentation"
+            >
+              <table
+                class="k-table k-grid-table k-table-md"
+                role="presentation"
+                style="display: table;"
+              >
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <tbody
+                  class="k-table-tbody"
+                  data-keyboardnavbody="true"
+                  role="rowgroup"
+                >
+                  <tr
+                    absolute-row-index="0"
+                    aria-rowindex="2"
+                    class="k-table-row k-master-row"
+                    data-grid-row-index="0"
+                    role="row"
+                  >
+                    <td
+                      aria-colindex="1"
+                      aria-selected="false"
+                      class="k-table-td"
+                      colspan="1"
+                      data-grid-col-index="0"
+                      role="gridcell"
+                    >
+                      Punk IPA 2007 - 2010
+                    </td>
+                    <td
+                      aria-colindex="2"
+                      aria-selected="false"
+                      class="k-table-td"
+                      colspan="1"
+                      data-grid-col-index="1"
+                      role="gridcell"
+                    >
+                      1
+                    </td>
+                    <td
+                      aria-colindex="3"
+                      aria-selected="false"
+                      class="k-table-td"
+                      colspan="1"
+                      data-grid-col-index="2"
+                      role="gridcell"
+                    >
+                      Post Modern Classic. Spiky. Tropical. Hoppy.
+                    </td>
+                  </tr>
+                  <tr
+                    absolute-row-index="1"
+                    aria-rowindex="3"
+                    class="k-table-row k-master-row k-table-alt-row k-alt"
+                    data-grid-row-index="1"
+                    role="row"
+                  >
+                    <td
+                      aria-colindex="1"
+                      aria-selected="false"
+                      class="k-table-td"
+                      colspan="1"
+                      data-grid-col-index="0"
+                      role="gridcell"
+                    >
+                      Punk IPA 2007 - 2010
+                    </td>
+                    <td
+                      aria-colindex="2"
+                      aria-selected="false"
+                      class="k-table-td"
+                      colspan="1"
+                      data-grid-col-index="1"
+                      role="gridcell"
+                    >
+                      10
+                    </td>
+                    <td
+                      aria-colindex="3"
+                      aria-selected="false"
+                      class="k-table-td"
+                      colspan="1"
+                      data-grid-col-index="2"
+                      role="gridcell"
+                    >
+                      Post Modern Classic. Spiky. Tropical. Hoppy.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="k-height-container"
+              role="presentation"
+            >
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-keyshortcuts="Enter ArrowRight ArrowLeft"
+        aria-label="Pager"
+        aria-roledescription="pager"
+        class="k-pager k-pager-md"
+        role="application"
+      >
+        <div
+          class="k-pager-numbers-wrap"
+        >
+          <select
+            aria-label="Select"
+            class="k-picker k-dropdown-list k-dropdown k-rounded-md k-picker-md"
+          >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+            <option>
+              5
+            </option>
+            <option>
+              6
+            </option>
+            <option>
+              7
+            </option>
+            <option>
+              8
+            </option>
+          </select>
+          <div
+            class="k-pager-numbers"
+          >
+            <button
+              aria-current="true"
+              aria-label="Page 1"
+              class="k-button k-button-md k-button-flat k-button-flat-primary k-selected"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                1
+              </span>
+            </button>
+            <button
+              aria-label="Page 2"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                2
+              </span>
+            </button>
+            <button
+              aria-label="Page 3"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                3
+              </span>
+            </button>
+            <button
+              aria-label="Page 4"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                4
+              </span>
+            </button>
+            <button
+              aria-label="Page 5"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                5
+              </span>
+            </button>
+            <button
+              aria-label="Page 6"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                6
+              </span>
+            </button>
+            <button
+              aria-label="Page 7"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                7
+              </span>
+            </button>
+            <button
+              aria-label="Page 8"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                8
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="k-pager-info"
+        >
+          1 - 25 of 200 items
+        </div>
+      </div>
+    </div>
+    <div>
+      <button>
+        Show Billing Info
+      </button>
+    </div>
+  </div>
+</div>
+`;
