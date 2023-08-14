@@ -8,6 +8,7 @@
     "@progress/kendo-react-buttons": "^5.16.1",
     "@progress/kendo-react-grid": "^5.16.1",
     "@progress/kendo-react-labels": "^5.16.1",
+    "@progress/kendo-react-layout": "^5.16.1",
     "@progress/kendo-theme-default": "^6.6.0",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",

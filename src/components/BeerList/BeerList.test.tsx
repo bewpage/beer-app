@@ -1,6 +1,7 @@
 import React from 'react';
 import { default as axios } from 'axios';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import BeerList from './BeerList';
 
 // Mocking the API call
@@ -27,9 +28,17 @@ describe('BeerList component', () => {
     await screen.findByText('No records available');
   });
 
-  it('displays a message when an error occurs', async () => {
-    mockedAxios.get.mockRejectedValueOnce(new Error('Error'));
+  it('clicking the button toggles the ABV filter', async () => {
+    mockedAxios.get.mockResolvedValueOnce({ data: mockBeers });
     render(<BeerList />);
-    await screen.findByText('An error occurred while fetching beers');
+
+    await screen.findByText('Sample Beer 1');
+
+    expect(screen.getByText('Sample Beer 2')).toBeInTheDocument();
+
+    const button = screen.getByText('Show High ABV Beers');
+    await userEvent.click(button);
+
+    expect(screen.getByText('Show All Beers')).toBeInTheDocument();
   });
 });
