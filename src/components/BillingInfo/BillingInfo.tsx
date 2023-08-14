@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import BillingInfoItem from './BillingInfoItem';
 import { findMembersToBill, Member } from './findMambersToBill';
+import { Button } from '@progress/kendo-react-buttons';
 import data from '../../donneesTest.json';
+import './BillingInfo.css';
 
 const BillingInfo = () => {
   const [billingInfo, setBillingInfo] = useState<{
@@ -16,7 +18,7 @@ const BillingInfo = () => {
   };
   return (
     <div>
-      <button onClick={handleShowBilling}>Show Billing Info</button>
+      <Button onClick={handleShowBilling}>Show Billing Info</Button>
       {billingInfo && (
         <div>
           <BillingInfoItem

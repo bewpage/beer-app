@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
-import {useBeerStore} from '../../state/beerStore';
-import {Grid, GridToolbar} from '@progress/kendo-react-grid';
-import {GridColumn as Column} from '@progress/kendo-react-grid/dist/npm/GridColumn';
-import {PageChangeEvent, Pager} from '@progress/kendo-react-data-tools';
+import React, { useEffect } from 'react';
+import { useBeerStore } from '../../state/beerStore';
+import { Grid, GridToolbar } from '@progress/kendo-react-grid';
+import { GridColumn as Column } from '@progress/kendo-react-grid/dist/npm/GridColumn';
+import { PageChangeEvent, Pager } from '@progress/kendo-react-data-tools';
+import { Button } from '@progress/kendo-react-buttons';
 
 // add page configurator settings for app
 export const pageSettings: {
@@ -35,9 +36,9 @@ const BeerList = () => {
     <div>
       <Grid data={beers}>
         <GridToolbar>
-          <button onClick={toggleABVFilter}>
+          <Button onClick={toggleABVFilter}>
             {highABVOnly ? 'Show All Beers' : 'Show High ABV Beers'}
-          </button>
+          </Button>
         </GridToolbar>
         <Column field="name" title="Name" />
         <Column field="abv" title="ABV" />

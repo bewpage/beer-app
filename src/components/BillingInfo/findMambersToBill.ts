@@ -11,15 +11,19 @@ export const findMembersToBill = (
   dependents: Map<number, Member[]>;
   circularReferences: Set<number>;
 } => {
+  // Filtering out members to create a list of parents and children based on linkId.
   const parents: Member[] = members.filter(m => m.linkId === null);
   const children: Member[] = members.filter(m => m.linkId !== null);
 
+  // Sets to keep track of seen members and to detect circular references.
   const seen: Set<number> = new Set();
   const circularRefs: Set<number> = new Set();
 
+  // Iterate over children to check for circular references.
   children.forEach(child => {
     let current: Member | null = child;
     while (current && current.linkId !== null) {
+      // If we have seen this member before, it's a circular reference.
       if (seen.has(current.id)) {
         circularRefs.add(current.id);
         break;
@@ -29,6 +33,7 @@ export const findMembersToBill = (
     }
   });
 
+  // A member is billable if it's a parent or if it's a child that isn't linked by any other member.
   const billable = parents.concat(
     children.filter(child => !members.some(m => m.linkId === child.id))
   );
