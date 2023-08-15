@@ -57,9 +57,7 @@ of course, there are other approaches to this problem, but these are the most co
 - Legacy Systems: Not all systems support UUIDs, and integrating a UUID-based system with a legacy system that doesn't
   support them can be challenging.
 
-### 3. What is the possible bug in the return of this method in this C# code, knowing that the method should return the
-
-current date if no close date is found?
+### 3. What is the possible bug in the return of this method in this C# code, knowing that the method should return the current date if no close date is found?
 
 ```csharp
 public static DateTime GetClosest(this DateTime dateTime, DateTime[] dates)
