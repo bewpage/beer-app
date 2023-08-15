@@ -57,9 +57,7 @@ of course, there are other approaches to this problem, but these are the most co
 - Legacy Systems: Not all systems support UUIDs, and integrating a UUID-based system with a legacy system that doesn't
   support them can be challenging.
 
-### 3. What is the possible bug in the return of this method in this C# code, knowing that the method should return the
-
-current date if no close date is found?
+### 3. What is the possible bug in the return of this method in this C# code, knowing that the method should return the current date if no close date is found?
 
 ```csharp
 public static DateTime GetClosest(this DateTime dateTime, DateTime[] dates)
@@ -83,13 +81,11 @@ public static DateTime GetClosest(this DateTime dateTime, DateTime[] dates)
 
 Based on the description you've provided, the method should return the current date if no close date is found. However,
 in the provided C# method, if the `dates` array is empty, the method will return the default value for `DateTime` which
-is
-`DateTime.MinValue` (January 1, 0001 at 00:00:00.000).
-as well the method does not check if the dates array is null or not, so it would throw a `NullReferenceException` if the
-dates array is null.
+is `DateTime.MinValue` (January 1, 0001 at 00:00:00.000), as well the method does not check if the dates array is null
+or
+not, so it would throw a `NullReferenceException` if the dates array is null.
 To fix this bug, we can add a check to see if the dates array is empty or not, and if it is empty, we can return the
-current
-date.
+current date.
 
 ```csharp {.line-numbers}
 public static DateTime GetClosest(this DateTime dateTime, DateTime[] dates)
