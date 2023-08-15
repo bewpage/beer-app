@@ -1,6 +1,6 @@
 import React from 'react';
 import { default as axios } from 'axios';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import BeerList from './BeerList';
 
@@ -13,6 +13,11 @@ const mockBeers = [
 ];
 
 describe('BeerList component', () => {
+  beforeEach(() => {
+    mockedAxios.get.mockReset();
+    jest.clearAllMocks();
+  });
+
   it('fetches and displays beers on mount', async () => {
     mockedAxios.get.mockResolvedValueOnce({ data: mockBeers });
     const { container } = render(<BeerList />);
