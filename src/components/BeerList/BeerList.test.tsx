@@ -12,6 +12,17 @@ const mockBeers = [
   { id: 2, name: 'Sample Beer 2', abv: 8.1, tagline: 'Sample Tagline 2' },
 ];
 
+// Mock Kendo's ID Generation:
+jest.mock('@progress/kendo-react-common', () => {
+  const originalModule = jest.requireActual('@progress/kendo-react-common');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    guid: () => 'kendo-test-guid',
+  };
+});
+
 describe('BeerList component', () => {
   beforeEach(() => {
     mockedAxios.get.mockReset();

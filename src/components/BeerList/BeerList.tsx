@@ -2,20 +2,14 @@ import React, { useEffect } from 'react';
 import { useBeerStore } from '../../state/beerStore';
 import { Grid, GridToolbar } from '@progress/kendo-react-grid';
 import { GridColumn as Column } from '@progress/kendo-react-grid/dist/npm/GridColumn';
-import { PageChangeEvent, Pager } from '@progress/kendo-react-data-tools';
+import { PagerTargetEvent } from '@progress/kendo-react-data-tools';
 import { Button } from '@progress/kendo-react-buttons';
 import {
   Notification,
   NotificationGroup,
 } from '@progress/kendo-react-notification';
 import { Fade } from '@progress/kendo-react-animation';
-
-// add page configurator settings for app
-export const pageSettings: {
-  pageSize: number;
-} = {
-  pageSize: 10,
-};
+import { GridPageChangeEvent } from '@progress/kendo-react-grid/dist/npm/interfaces/events';
 
 const BeerList = () => {
   const beers = useBeerStore(state => state.beers);
@@ -26,6 +20,12 @@ const BeerList = () => {
   const fetchBeers = useBeerStore(state => state.fetchBeers);
   const toggleABVFilter = useBeerStore(state => state.toggleABVFilter);
   const setPage = useBeerStore(state => state.setPage);
+  const skip = useBeerStore(state => state.skip);
+  const setSkip = useBeerStore(state => state.setSkip);
+  const take = useBeerStore(state => state.take);
+  const setTake = useBeerStore(state => state.setTake);
+  const pageSize = useBeerStore(state => state.pageSize);
+  const setPageSize = useBeerStore(state => state.setPageSize);
 
   useEffect(() => {
     (async () => {
@@ -36,7 +36,7 @@ const BeerList = () => {
         setError('Failed to fetch beers. Please try again.');
       }
     })();
-  }, [page, highABVOnly]);
+  }, [page, highABVOnly, pageSize]);
 
   return (
     <div>
@@ -53,7 +53,27 @@ const BeerList = () => {
           </Fade>
         </NotificationGroup>
       )}
-      <Grid data={beers}>
+      <Grid
+        data={beers.slice(0, pageSize)}
+        style={{ height: '600px' }}
+        skip={skip}
+        take={take}
+        total={150}
+        pageable={{
+          buttonCount: 5,
+          pageSizes: [5, 10, 15],
+          pageSizeValue: pageSize,
+        }}
+        onPageChange={(event: GridPageChangeEvent) => {
+          const targetEvent = event.targetEvent as PagerTargetEvent;
+          const { skip, take } = event.page;
+          if (targetEvent.value) {
+            setPageSize(targetEvent.value);
+          }
+          setSkip(skip);
+          setTake(take);
+          setPage(skip / take + 1);
+        }}>
         <GridToolbar>
           <Button onClick={toggleABVFilter}>
             {highABVOnly ? 'Show All Beers' : 'Show High ABV Beers'}
@@ -63,15 +83,6 @@ const BeerList = () => {
         <Column field="abv" title="ABV" />
         <Column field="tagline" title="Tagline" />
       </Grid>
-      <Pager
-        skip={page * 25 - 25} // This value based on the API's page size
-        take={25}
-        total={200}
-        onPageChange={(event: PageChangeEvent) => {
-          const { skip, take } = event;
-          setPage(skip / take + 1);
-        }}
-      />
     </div>
   );
 };

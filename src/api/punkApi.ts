@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { pageSettings } from '../components/BeerList/BeerList';
+import { pageSettings } from '../App';
 
 const BASE_URL = 'https://api.punkapi.com/v2/beers';
 export const fetchBeers = async (

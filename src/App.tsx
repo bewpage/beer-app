@@ -4,6 +4,13 @@ import BeerList from './components/BeerList/BeerList';
 import BillingInfo from './components/BillingInfo/BillingInfo';
 import './App.css';
 
+// add page configurator settings for app
+export const pageSettings: {
+  pageSize: number;
+} = {
+  pageSize: 15,
+};
+
 const App = () => {
   return (
     <div className="grid-layout-container">

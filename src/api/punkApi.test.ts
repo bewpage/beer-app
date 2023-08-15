@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { fetchBeers } from './punkApi';
-import { pageSettings } from '../components/BeerList/BeerList';
+import { pageSettings } from '../App';
 
 // Mock the axios module
 jest.mock('axios');

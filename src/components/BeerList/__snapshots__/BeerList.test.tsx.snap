@@ -5,10 +5,11 @@ exports[`BeerList component fetches and displays beers on mount 1`] = `
   <div>
     <div
       aria-colcount="3"
-      aria-rowcount="2"
+      aria-rowcount="150"
       class="k-grid k-grid-md"
       data-keyboardnavscope="true"
       role="grid"
+      style="height: 600px;"
     >
       <div
         class="k-toolbar k-grid-toolbar k-toolbar-md"
@@ -239,144 +240,253 @@ exports[`BeerList component fetches and displays beers on mount 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      aria-keyshortcuts="Enter ArrowRight ArrowLeft"
-      aria-label="Pager"
-      aria-roledescription="pager"
-      class="k-pager k-pager-md"
-      role="application"
-    >
       <div
-        class="k-pager-numbers-wrap"
+        aria-roledescription="pager"
+        class="k-pager k-pager-md k-grid-pager k-pager-mobile-sm"
+        role="application"
       >
-        <select
-          aria-label="Select"
-          class="k-picker k-dropdown-list k-dropdown k-rounded-md k-picker-md"
-        >
-          <option>
-            1
-          </option>
-          <option>
-            2
-          </option>
-          <option>
-            3
-          </option>
-          <option>
-            4
-          </option>
-          <option>
-            5
-          </option>
-          <option>
-            6
-          </option>
-          <option>
-            7
-          </option>
-          <option>
-            8
-          </option>
-        </select>
         <div
-          class="k-pager-numbers"
+          class="k-pager-numbers-wrap"
         >
           <button
-            aria-current="true"
-            aria-label="Page 1"
-            class="k-button k-button-md k-button-flat k-button-flat-primary k-selected"
+            aria-disabled="true"
+            class="k-button k-button-md k-button-flat k-button-flat-base k-icon-button k-pager-nav k-pager-first k-disabled"
             role="button"
+            title="Go to the first page"
           >
             <span
-              class="k-button-text"
+              class="k-svg-icon k-svg-i-caret-alt-to-left k-button-icon"
             >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M352 384 160 256l192-128v256zM128 128v256h32V128h-32z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-disabled="true"
+            class="k-button k-button-md k-button-flat k-button-flat-base k-icon-button k-pager-nav k-disabled"
+            role="button"
+            title="Go to the previous page"
+          >
+            <span
+              class="k-svg-icon k-svg-i-caret-alt-left k-button-icon"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m160 256 192-128v256L160 256z"
+                />
+              </svg>
+            </span>
+          </button>
+          <select
+            class="k-picker k-dropdown-list k-dropdown k-rounded-md k-picker-md"
+          >
+            <option>
               1
-            </span>
-          </button>
-          <button
-            aria-label="Page 2"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
-            role="button"
-          >
-            <span
-              class="k-button-text"
-            >
+            </option>
+            <option>
               2
-            </span>
-          </button>
-          <button
-            aria-label="Page 3"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
-            role="button"
-          >
-            <span
-              class="k-button-text"
-            >
+            </option>
+            <option>
               3
-            </span>
-          </button>
-          <button
-            aria-label="Page 4"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
-            role="button"
-          >
-            <span
-              class="k-button-text"
-            >
+            </option>
+            <option>
               4
-            </span>
-          </button>
-          <button
-            aria-label="Page 5"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
-            role="button"
-          >
-            <span
-              class="k-button-text"
-            >
+            </option>
+            <option>
               5
+            </option>
+            <option
+              value="6"
+            >
+              ...
+            </option>
+          </select>
+          <div
+            class="k-pager-numbers"
+          >
+            <button
+              aria-current="true"
+              aria-label="undefined 1"
+              class="k-button k-button-md k-button-flat k-button-flat-primary k-selected"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                1
+              </span>
+            </button>
+            <button
+              aria-label="undefined 2"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                2
+              </span>
+            </button>
+            <button
+              aria-label="undefined 3"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                3
+              </span>
+            </button>
+            <button
+              aria-label="undefined 4"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                4
+              </span>
+            </button>
+            <button
+              aria-label="undefined 5"
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                5
+              </span>
+            </button>
+            <button
+              class="k-button k-button-md k-button-flat k-button-flat-primary"
+              role="button"
+            >
+              <span
+                class="k-button-text"
+              >
+                ...
+              </span>
+            </button>
+          </div>
+          <button
+            class="k-button k-button-md k-button-flat k-button-flat-base k-icon-button k-pager-nav"
+            role="button"
+            title="Go to the next page"
+          >
+            <span
+              class="k-svg-icon k-svg-i-caret-alt-right k-button-icon"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M352 256 160 384V128l192 128z"
+                />
+              </svg>
             </span>
           </button>
           <button
-            aria-label="Page 6"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
+            class="k-button k-button-md k-button-flat k-button-flat-base k-icon-button k-pager-nav k-pager-last"
             role="button"
+            title="Go to the last page"
           >
             <span
-              class="k-button-text"
+              class="k-svg-icon k-svg-i-caret-alt-to-right k-button-icon"
             >
-              6
-            </span>
-          </button>
-          <button
-            aria-label="Page 7"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
-            role="button"
-          >
-            <span
-              class="k-button-text"
-            >
-              7
-            </span>
-          </button>
-          <button
-            aria-label="Page 8"
-            class="k-button k-button-md k-button-flat k-button-flat-primary"
-            role="button"
-          >
-            <span
-              class="k-button-text"
-            >
-              8
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m128 128 192 128-192 128V128zm224 256V128h-32v256h32z"
+                />
+              </svg>
             </span>
           </button>
         </div>
-      </div>
-      <div
-        class="k-pager-info"
-      >
-        1 - 25 of 200 items
+        <span
+          class="k-pager-sizes"
+        >
+          <span
+            aria-describedby="kendo-test-guid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="kendo-test-guid"
+            aria-required="false"
+            class="k-dropdownlist k-picker k-picker-md k-rounded-md k-picker-solid"
+            role="combobox"
+            tabindex="0"
+          >
+            <span
+              class="k-input-inner"
+              id="kendo-test-guid"
+            >
+              <span
+                class="k-input-value-text"
+              >
+                15
+              </span>
+            </span>
+            <button
+              aria-hidden="true"
+              aria-label="select"
+              class="k-button k-button-md k-button-solid k-button-solid-base k-icon-button k-input-button"
+              tabindex="-1"
+              type="button"
+            >
+              <span
+                class="k-svg-icon k-svg-i-caret-alt-down k-button-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 352 128 160h256L256 352z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <select
+              aria-hidden="true"
+              style="opacity: 0; width: 1px; border: 0px; z-index: -1; position: absolute; left: 50%;"
+              tabindex="-1"
+            >
+              <option
+                value="15"
+              />
+            </select>
+          </span>
+          items per page
+        </span>
+        <div
+          class="k-pager-info"
+        >
+          1 - 15 of 150 items
+        </div>
       </div>
     </div>
   </div>
