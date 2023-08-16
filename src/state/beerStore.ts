@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { fetchBeers as fetchFromApi } from '../api/punkApi';
 
-
 // add page configurator settings for app
 export const pageSettings: {
   pageSize: number;
