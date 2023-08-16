@@ -460,7 +460,7 @@ exports[`App component renders beers data correctly 1`] = `
                     <span
                       class="k-input-value-text"
                     >
-                      10
+                      15
                     </span>
                   </span>
                   <button
@@ -491,7 +491,7 @@ exports[`App component renders beers data correctly 1`] = `
                     tabindex="-1"
                   >
                     <option
-                      value="10"
+                      value="15"
                     />
                   </select>
                 </span>
@@ -500,7 +500,7 @@ exports[`App component renders beers data correctly 1`] = `
               <div
                 class="k-pager-info"
               >
-                1 - 10 of 150 items
+                1 - 15 of 150 items
               </div>
             </div>
           </div>
