@@ -2,7 +2,6 @@
   "name": "beer-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bewpage.github.io/beer-app/",
   "dependencies": {
     "@progress/kendo-data-query": "^1.6.0",
     "@progress/kendo-licensing": "^1.3.1",
