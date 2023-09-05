@@ -12,29 +12,23 @@ import { Fade } from '@progress/kendo-react-animation';
 import { GridPageChangeEvent } from '@progress/kendo-react-grid/dist/npm/interfaces/events';
 
 const BeerList = () => {
+  /**
+   * Combine setter functions into one more generic function
+   */
+  const { updateState } = useBeerStore();
   const beers = useBeerStore(state => state.beers);
   const error = useBeerStore(state => state.error);
-  const setError = useBeerStore(state => state.setError);
   const page = useBeerStore(state => state.page);
   const highABVOnly = useBeerStore(state => state.highABVOnly);
   const fetchBeers = useBeerStore(state => state.fetchBeers);
   const toggleABVFilter = useBeerStore(state => state.toggleABVFilter);
-  const setPage = useBeerStore(state => state.setPage);
   const skip = useBeerStore(state => state.skip);
-  const setSkip = useBeerStore(state => state.setSkip);
   const take = useBeerStore(state => state.take);
-  const setTake = useBeerStore(state => state.setTake);
   const pageSize = useBeerStore(state => state.pageSize);
-  const setPageSize = useBeerStore(state => state.setPageSize);
 
   useEffect(() => {
     (async () => {
-      try {
-        await fetchBeers(page);
-        setError(null); // clear previous errors
-      } catch (err) {
-        setError('Failed to fetch beers. Please try again.');
-      }
+      await fetchBeers(page);
     })();
   }, [page, highABVOnly, pageSize]);
 
@@ -47,7 +41,7 @@ const BeerList = () => {
             <Notification
               type={{ style: 'error', icon: true }}
               closable={true}
-              onClose={() => setError(null)}>
+              onClose={() => updateState({ error: null })}>
               <span>{error}</span>
             </Notification>
           </Fade>
@@ -68,11 +62,11 @@ const BeerList = () => {
           const targetEvent = event.targetEvent as PagerTargetEvent;
           const { skip, take } = event.page;
           if (targetEvent.value) {
-            setPageSize(targetEvent.value);
+            updateState({ pageSize: targetEvent.value });
           }
-          setSkip(skip);
-          setTake(take);
-          setPage(skip / take + 1);
+          updateState({ skip });
+          updateState({ take });
+          updateState({ page: skip / take + 1 });
         }}>
         <GridToolbar>
           <Button onClick={toggleABVFilter}>
