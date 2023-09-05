@@ -8,8 +8,31 @@ export const pageSettings: {
   pageSize: 15,
 };
 
-interface BeerStore {
-  beers: any[];
+// added types for Beer data
+export enum VolumeUnits {
+  Liters = 'liters',
+  Gallons = 'gallons',
+}
+
+export type BeerType = {
+  id: number;
+  name: string;
+  abv: number;
+  description: string;
+  image_url: string;
+  tagline: string;
+  first_brewed: string;
+  food_pairing: string[];
+  brewers_tips: string;
+  contributed_by: string;
+  boil_volume: {
+    value: number;
+    unit: VolumeUnits;
+  };
+};
+
+type BeerStore = {
+  beers: BeerType[];
   page: number;
   skip: number;
   take: number;
@@ -18,12 +41,8 @@ interface BeerStore {
   error: string | null;
   fetchBeers: (page?: number, highABVOnly?: boolean) => Promise<void>;
   toggleABVFilter: () => void;
-  setPage: (page: number) => void;
-  setError: (error: string | null) => void;
-  setSkip: (skip: number) => void;
-  setTake: (take: number) => void;
-  setPageSize: (pageSize: number) => void;
-}
+  updateState: (state: Partial<BeerStore>) => void;
+};
 
 export const useBeerStore = create<BeerStore>((set, get) => ({
   beers: [],
@@ -33,22 +52,34 @@ export const useBeerStore = create<BeerStore>((set, get) => ({
   pageSize: pageSettings?.pageSize,
   highABVOnly: false,
   error: null,
-  fetchBeers: async (
-    page = get().page,
-    highABVOnly = get().highABVOnly,
-    pageSize = get().pageSize
-  ) => {
-    const data = await fetchFromApi(page, highABVOnly, pageSize);
-    set({ beers: data });
+  fetchBeers: async () => {
+    /**
+     * Instead of using get().page, get().highABVOnly, get().pageSize as default parameters in fetchBeers,
+     * use directly destructure them inside the function, for easier to read and understand what defaults are being used.
+     *
+     * moved error handling to the Zustand store, so that it gets encapsulated within the fetchBeers function itself and
+     * it will make component code cleaner.
+     */
+    try {
+      const { page, highABVOnly, pageSize } = get();
+      const data = await fetchFromApi(page, highABVOnly, pageSize);
+      set({ beers: data });
+    } catch (error) {
+      set({ error: 'Failed to fetch beers. Please try again.' });
+    }
   },
   toggleABVFilter: () => {
     set(state => ({ highABVOnly: !state.highABVOnly }));
   },
-  setPage: (page: number) => {
-    set({ page });
-  },
-  setError: (error: string | null) => set({ error }),
-  setSkip: (skip: number) => set({ skip }),
-  setTake: (take: number) => set({ take }),
-  setPageSize: (pageSize: number) => set({ pageSize }),
+  /**
+   *
+   * Combine Setter Functions
+   * into more generic 'updateState' function
+   * The updateState function takes an object that partially matches the store's state (Partial<BeerStore>)
+   * and merges it with the existing state. Because Zustand's set function accepts partial state updates,
+   * it merges the new state with the existing one.
+   *
+   * @param partialSate
+   */
+  updateState: (partialSate: Partial<BeerStore>) => set(partialSate),
 }));
