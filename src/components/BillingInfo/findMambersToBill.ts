@@ -14,7 +14,6 @@ export const findMembersToBill = (
   // Filtering out members to create a list of parents and children based on linkId.
   const parents: Member[] = members.filter(m => m.linkId === null);
   const children: Member[] = members.filter(m => m.linkId !== null);
-
   // Set to detect circular references.
   const circularRefs: Set<number> = new Set();
 

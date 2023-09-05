@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Member } from './findMambersToBill';
 
 type BillingInfoProps = {
@@ -6,10 +6,10 @@ type BillingInfoProps = {
   dependents: Map<number, Member[]>;
 };
 
-const BillingInfoItem: React.FC<BillingInfoProps> = ({
+const BillingInfoItem = ({
   billable,
   dependents,
-}) => {
+}: BillingInfoProps): ReactElement => {
   return (
     <div>
       <h3>Billable Members</h3>
